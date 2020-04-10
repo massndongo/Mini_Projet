@@ -1,0 +1,104 @@
+.background-green{
+    background-color: #042425;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 20%;
+}
+.quizz{
+    width: 8%;
+    height: 100%;
+    float: left;
+}
+.quizz>a>img{
+    width: 100%;
+    height: 100%;;
+}
+#titre{
+    position: relative;
+    left: 30%;
+    top: 30%;
+    color: white;
+    font-size: 2.3em;
+    font-weight: bold;
+}
+.arriere-plan{
+    background-image: url('Images/img-bg.jpg');
+    width: 100%;
+    height: 80%;
+}
+.conteneur{
+    width: 50%;
+    height: 70%;
+    margin: auto;
+    position: relative;
+    top: 15%;
+}
+.entete-form{
+    width: 100%;
+    height: 20%;
+    background-color: #51bfd0;
+}
+#login-form{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    position: relative;
+    left: 5%;
+    top: 20%;
+}
+#x{
+    font-weight: bold;
+    font-size: 1.5em;
+    color: white;
+    position: relative;
+    left: 70%;
+    top: 20%;
+}
+form{
+    width: 100%;
+    height: 80%;
+    background-color: #f2f2f2;
+}
+.input{
+    width: 85%;
+    margin: auto;
+}
+input{
+    width: 90%;
+    height: 20%;
+    margin-top: 25px;
+    border-radius: 5px;
+    border-color: none;
+    border: 2px solid #dedede;
+    background-color: #f8f8f8;
+}
+#inputlogin, #inputpsswd{
+    text-indent: 6%;
+}
+.icone-input{
+    position: relative;
+    right: 10%;
+}
+.submit{
+    
+    width: 85%;
+}
+#sub{
+    position: relative;
+    left: 9%;
+    width: 25%;
+    color: white;
+    background-color: #51bfd0;
+    font-size: 1em;
+    border-color: #51bfd0;
+}
+.lien-insc{
+    position: relative;
+    left: 20%;
+}
+.lien-insc>a{
+    font-weight: bold;
+    color: #999999;
+    text-decoration: none;
+}
