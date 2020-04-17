@@ -1,0 +1,18 @@
+[
+        {
+            "login":"admin",
+            "mdp":"admin",
+            "role":"admin",
+            "prenom":"Massam",
+            "nom":"NDONGO",
+            "image":"../public/images/massam.jpg"
+        },
+        {
+            "login":"mass",
+            "mdp":"1234",
+            "role":"joueur",
+            "prenom":"Cheikh",
+            "nom":"KA",
+            "image":"../public/images/mass.jpg"
+        }
+]

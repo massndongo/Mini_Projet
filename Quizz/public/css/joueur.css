@@ -1,0 +1,126 @@
+.background-green{
+    background-color: #042425;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 20%;
+}
+.quizz{
+    width: 8%;
+    height: 100%;
+    float: left;
+}
+.quizz>a>img{
+    width: 100%;
+    height: 100%;;
+}
+#titre{
+    position: relative;
+    left: 30%;
+    top: 30%;
+    color: white;
+    font-size: 2.3em;
+    font-weight: bold;
+}
+.arriere-plan{
+    background-image: url('../images/img-bg.jpg');
+    width: 100%;
+    height: 1000px;
+}
+.conteneur{
+    background-color: #f2f2f2;
+    position: relative;
+    top: 1%;
+    width: 90%;
+    height: 80%;
+    margin: auto;
+}
+.entete{
+    background-color: #51bfd0;
+    width: 100%;
+    height: 10%;
+}
+.image{
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+.pp{
+    position: relative;
+    left: 5%;
+    top: 5%;
+    width: 20%;
+    height: 60%;
+    border-radius: 50%;
+    border: #6e9393 solid 1px;
+}
+.image>.pp>img{
+    position: relative;
+    left: 15%;
+    top: 15%;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+}
+#prenom,#nom{
+    color: white;
+    position: relative;
+    top: 10px;
+    left: 3%;
+}
+.text{
+    color: white;float: left;
+    position: relative;
+    top: 20%;
+    font-size: 1.2em;
+}
+.class-deconnexion{
+    float: left;
+    background: #3addd6;
+    height: 40%;
+    width: 12%;
+    position: relative;
+    left: 7%;
+    top: 30%;
+    border-radius: 5px;
+    text-shadow: 0px 0px 5px;
+    box-shadow: 0px 0px 5px;
+    
+}
+.class-deconnexion a{
+    position: relative;
+    left: 10%;
+    top: 17%;
+    font-size: 1.1em;
+    text-decoration: none;
+    color: white;
+}
+.conteneur-body{
+    width: 95%;
+    height: 87%;
+    margin: auto;
+    position: relative;
+    top: 10px;
+    border-radius: 3px;
+    background-color: white;
+}
+.question{
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 65%;
+    height: 95%;
+    background-color: none;
+    border: 2px solid #3addd6;
+    border-radius: 6px;
+}
+.score{
+    float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+    width: 31%;
+    height: 80%;
+    background-color: white;
+    text-shadow: 0px 0px 5px;
+    box-shadow: 0px 0px 5px;
+}

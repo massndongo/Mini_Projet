@@ -1,0 +1,4 @@
+{
+    "role":{"Admin":[{"login":"massam", "password":"1234"}],
+    "Joueur":[{"login":"sam", "password":"4321"}]}
+}

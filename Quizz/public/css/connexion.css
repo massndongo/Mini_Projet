@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 .background-green{
     background-color: #042425;
     position: relative;
@@ -23,13 +27,13 @@
     font-weight: bold;
 }
 .arriere-plan{
-    background-image: url('Images/img-bg.jpg');
+    background-image: url('../images/img-bg.jpg');
     width: 100%;
-    height: 80%;
+    height: 1000px;
 }
 .conteneur{
     width: 50%;
-    height: 70%;
+    height: 80%;
     margin: auto;
     position: relative;
     top: 15%;
@@ -45,9 +49,10 @@
     color: white;
     position: relative;
     left: 5%;
-    top: 20%;
+    top: 15%;
 }
-#x{
+#x >a{
+    text-decoration: none;
     font-weight: bold;
     font-size: 1.5em;
     color: white;
@@ -66,8 +71,8 @@ form{
 }
 input{
     width: 90%;
-    height: 20%;
-    margin-top: 25px;
+    height: 15%;
+    margin-top: 15px;
     border-radius: 5px;
     border-color: none;
     border: 2px solid #dedede;
@@ -80,11 +85,10 @@ input{
     position: relative;
     right: 10%;
 }
-.submit{
-    
+.submit{ 
     width: 85%;
 }
-#sub{
+#sub{ 
     position: relative;
     left: 9%;
     width: 25%;
