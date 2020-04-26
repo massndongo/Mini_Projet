@@ -1,11 +1,11 @@
 <?php
     //FONCTION POUR VERIFIER LES INFORMATIONS DE CONNEXION
 function verif_info_connexion($loginform,$mdpform){
-    $file=json_decode(file_get_contents('../data/users.json'));
+    $file=file_get_contents('../data/users.json');
+    $file=json_decode($file, true);
     foreach ($file as $value) {
-        $log=$value->login;
-        $pass=$value->mdp;
-        $rol=$value->role;
+        $log=$value["login"];
+        $pass=$value["mdp"];
         if ($log==$loginform && $pass==$mdpform) {
             return true;
         }
@@ -14,16 +14,18 @@ function verif_info_connexion($loginform,$mdpform){
 }
     //FONCTION POUR VERIFIER LES INFORMATIONS DE CONNEXION
 function recup_info_user($loginform,$mdpform){
-     $file=json_decode(file_get_contents('../data/users.json'));
+    $file=file_get_contents('../data/users.json');
+    $file=json_decode($file, true);
     foreach ($file as $value) {
-        $log=$value->login;
-        $pass=$value->mdp;
-        $rol=$value->role;
+        $log=$value['login'];
+        $pass=$value['mdp'];
         if ($log==$loginform && $pass==$mdpform) {
-            return $value;
+             $result[]=$value;
         }
     }
+    return $result;
 }
+
 function connexion($login,$pwd){
     $utilisateurs=getData();
     foreach ($utilisateurs as $user) {

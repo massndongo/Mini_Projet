@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,22 +12,57 @@
 <body>
     <h2 class="h2">LISTE DES JOUEURS PAR SCORE</h2>
     <div class="conteneur-joueur">
-        <div class="nomjoueur">
-            <div class="nom">Nom</div>
-            <div class="list-nom">CVKCJVKJV</div>
-        </div>
-        <div class="nomjoueur">
-            <div class="nom">Prénoms</div>
-            <div class="list-nom">CVKCJVKJV</div>
-        </div>
-        <div class="nomjoueur">
-            <div class="nom">Score</div>
-            <div class="list-nom">CVKCJVKJV</div>
-        </div>
-
-    </div>
-    <div class="suivant">
-        <div class="link-suivant"><a href="#">Suivant</a></div>
+        <form action="" method="post">
+            <table style="width:100%;height:auto;text-align:center;color:#818181">
+                <tr>
+                    <strong><th>Prénoms</th></strong>
+                    <strong><th>Nom</th></strong>
+                    <strong><th>Score</th></strong>
+                </tr>
+                <tr>
+                    <?php
+                        $data=file_get_contents(dirname(__DIR__).'/data/users.json');
+                        $data=json_decode($data,true);
+                        foreach ($data as $value) {
+                            if ($value['role']=="joueur") {
+                                $infosJ[]=$value;
+                            }
+                        }
+                        $columns=array_column($infosJ,'score');
+                        array_multisort($columns, SORT_DESC, $infosJ);
+                        if (isset($_POST['suivant'])) {
+                            $debut=$_SESSION['fin'];
+                            $fin=$_SESSION['fin']+3;
+                        }elseif (isset($_POST['precedent'])) {
+                            $debut=$_SESSION['fin']-6;
+                            $fin=$_SESSION['fin']-3;
+                        }else {
+                            $debut=0;
+                            $fin=3;
+                        }
+                        for ($i=$debut; $i < $fin ; $i++) { 
+                            if ($i<count($infosJ)) {
+                            ?>
+                            <td><?= $infosJ[$i]['prenom']; ?></td>
+                            <td><?= $infosJ[$i]['nom']; ?></td>
+                            <td><?= $infosJ[$i]['score']; ?></td>
+                </tr>
+                        <?php }
+                        }
+                        $_SESSION['fin']=$fin;
+                        ?>
+            </table>
+            <div class="link-form">
+                <?php
+                    if (isset($_POST['suivant']) || $_SESSION['fin']>=5) {  ?>
+                        <button class='suivant' name='precedent'>Precedent</button>
+                   <?php }
+                    if ($_SESSION['fin']<count($infosJ)) { ?>
+                        <button name='suivant' class='suivant'>Suivant</button>
+                   <?php }
+                ?>
+            </div>
+        </form>
     </div>
 </body>
 </html>

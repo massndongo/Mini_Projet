@@ -2,32 +2,31 @@
 session_start();
 include_once "../traitement/fonctions.php";
 $message="";
-    if (isset($_POST['connexion'])) {
+$role=""; 
+if (isset($_POST['connexion'])) {
         $login=$_POST['login'];
         $mdp=$_POST['mdp'];
         if (empty($login) || empty($mdp)) {
             $message="Tous les champs sont obligatoires";
         }else {
                 if (verif_info_connexion($login, $mdp)) {
-                    if ($login=="admin") {
-                        $infos_admin[]= recup_info_user($login, $mdp);
-                        foreach ($infos_admin as $value) {
-                            $_SESSION['prenom']=$value->prenom;
-                            $_SESSION['nom']=$value->nom;
-                            $_SESSION['image']=$value->image;
-                            $_SESSION['role']=$value->role;
-                        }
-                        header('location:pageadmin.php');
-                    }
-                    if ($login=="mass") {
-                        $infos_joueur[]= recup_info_user($login, $mdp);
-                        foreach ($infos_joueur as $value) {
-                            $_SESSION['prenom']=$value->prenom;
-                            $_SESSION['nom']=$value->nom;
-                            $_SESSION['image']=$value->image;
-                            $_SESSION['role']=$value->role;
-                        }
-                        header('location:joueur.php');
+                    $data = recup_info_user($login,$mdp);
+                    foreach ($data as $value) { 
+                            if ($value["role"]==="admin") { 
+                                    $_SESSION['prenom']=$value['prenom'];
+                                    $_SESSION['nom']=$value['nom'];
+                                    $_SESSION['image']=$value['image'];
+                                    $_SESSION['login']=$value['login'];
+                                    $_SESSION['role']=$value['role'];
+                                header('location:admin.php');
+                            }else {
+                                    $_SESSION['prenom']=$value['prenom'];
+                                    $_SESSION['nom']=$value['nom'];
+                                    $_SESSION['image']=$value['image'];
+                                    $_SESSION['role']=$value['role'];
+                                    $_SESSION['login']=$value['login'];
+                                header('location:jeux.php');
+                            }
                     }
                 }else {
                        $message="Login ou mot de passe Incorrect";
@@ -65,7 +64,7 @@ $message="";
                         <span class="icone-input"><img src="../public/icones/ic-password.png" alt="" srcset=""></span>
                     </div>
                     <div class="submit">
-                        <input type="submit" name="connexion" value="Connexion" id="sub">
+                        <input type="submit" name="connexion" valueue="Connexion" id="sub">
                         <span class="lien-insc"><a href="inscriptionjoueur.php">S'inscrire pour jouer ?</a></span>
                     </div>
                 </form>

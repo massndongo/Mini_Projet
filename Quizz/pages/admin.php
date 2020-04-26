@@ -28,29 +28,6 @@ $(document).ready(function () {
 
 <html>
     <head>
-    <script type="text/javascript">
-function envoieRequete(url,id)
-{
-	var xhr_object = null;
-	var position = id;
-	   if(window.XMLHttpRequest)  xhr_object = new XMLHttpRequest();
-	  else
-	    if (window.ActiveXObject)  xhr_object = new ActiveXObject("Microsoft.XMLHTTP"); 
-
-	// On ouvre la requete vers la page désirée
-	xhr_object.open("GET", url, true);
-	xhr_object.onreadystatechange = function(){
-	if ( xhr_object.readyState == 4 )
-	{
-		// j'affiche dans la DIV spécifiées le contenu retourné par le fichier
-		document.getElementById(position).innerHTML = xhr_object.responseText;
-	}
-	}
-	// dans le cas du get
-	xhr_object.send(null);
-
-}
-</script>
         <title>PAGE ADMIN</title>
         <meta charset=utf-8>
         <link rel="stylesheet" type="text/css" href="../public/css/pageadmin.css">
@@ -82,14 +59,27 @@ function envoieRequete(url,id)
                     </div>
                     <div class="list-prop">
                         <ul>
-                            <div class="li"><a href="#" onclick="envoieRequete('listequestion.php','myid');"><li><span class="text">Liste Questions</span><span class="icn"><img src="../public/icones/ic-liste.png" alt="" srcset=""></span></li></a></div>
-                            <div class="li"><a href="#" onclick="envoieRequete('inscription.php','myid');"><li><span class="text">Créer Admin</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""></span></li></a></div>
-                            <div class="li"><a href="#" onclick="envoieRequete('listejoueur.php','myid');"><li><span class="text">Liste Joueurs</span><span class="icn"><img src="../public/icones/ic-liste.png" alt="" srcset=""></span></li></a></div>
-                            <div class="li"><a href="#" onclick="envoieRequete('question.php','myid');"><li><span class="text">Créer Questions</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""></span></li></a></div>
+                            <div class="li"><a href="admin.php?lien=lq"><li><span class="text">Liste Questions</span><span class="icn"><img src="../public/icones/ic-liste.png" alt="" srcset=""></span></li></a></div>
+                            <div class="li"><a href="admin.php?lien=ca" ><li><span class="text">Créer Admin</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""></span></li></a></div>
+                            <div class="li"><a href="admin.php?lien=lj"><li><span class="text">Liste Joueurs</span><span class="icn"><img src="../public/icones/ic-liste.png" alt="" srcset=""></span></li></a></div>
+                            <div class="li"><a href="admin.php?lien=cq"><li><span class="text">Créer Questions</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""></span></li></a></div>
                         </ul>
                     </div>
                 </div>
                 <div class="grande-section" id="myid">
+                    <?php
+                        if (isset($_GET['lien'])) {
+                            if ($_GET['lien']=='lq') {
+                                require_once "listequestion.php";
+                            }elseif ($_GET['lien']=='ca') {
+                                require_once "inscription.php";
+                            }elseif ($_GET['lien']=='lj') {
+                                require_once "listejoueur.php";
+                            }elseif ($_GET['lien']=='cq') {
+                                require_once "question.php";
+                            }
+                        }
+                    ?>
                 </div>
             </div>
         </div>
