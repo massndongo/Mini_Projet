@@ -1,5 +1,1 @@
-[
-    {
-        
-    }
-]
+[{"question":"f","point":"3","choixReponse":"choixM","repFausse":{"0":"a","4":"r"},"repCorrect":["b","c","d"]},{"question":"f","point":"3","choixReponse":"choixM","repFausse":{"0":"a","4":"r"},"repCorrect":["b","c","d"]}]

@@ -1,1 +1,19 @@
-[{"login":"admin","mdp":"admin","role":"admin","prenom":"Massam","nom":"NDONGO","image":"..\/public\/images\/massam.jpg"},{"login":"mass","mdp":"1234","role":"joueur","prenom":"Cheikh","nom":"KA","image":"..\/public\/images\/mass.jpg","score":1000},{"login":"mass2","mdp":"1234","role":"joueur","prenom":"Lamp","nom":"FALL","image":"..\/public\/images\/mass.jpg","score":2000},{"login":"mass3","mdp":"1234","role":"joueur","prenom":"Lamp","nom":"FALL","image":"..\/public\/images\/mass.jpg","score":3000},{"login":"mass4","mdp":"1234","role":"joueur","prenom":"Lamp","nom":"FALL","image":"..\/public\/images\/mass.jpg","score":4000},{"login":"mass5","mdp":"1234","role":"joueur","prenom":"Lamp","nom":"FALL","image":"..\/public\/images\/mass.jpg","score":5000},{"prenom":"massam","nom":"ndongo","login":"mass","mdp":"123","image":"mass.jpg","role":"joueur","score":0},{"prenom":"massam","nom":"ndongo","login":"mass","mdp":"123","image":"mass.jpg","role":"joueur","score":0},{"prenom":"massam","nom":"ndongo","login":"mass","mdp":"123","image":"mass.jpg","role":"joueur","score":0},{"prenom":"massam","nom":"ndongo","login":"mass","mdp":"123","image":"mass.jpg","role":"joueur","score":0},{"prenom":"massam","nom":"ndongo","login":"mass","mdp":"123","image":"mass.jpg","role":"joueur","score":0},{"prenom":"massam","nom":"ndongo","login":"mass","mdp":"123","image":"mass.jpg","role":"joueur","score":0}]
+[
+    {
+        "role":"admin",
+        "login":"admin",
+        "mdp":"admin",
+        "prenom":"Massam",
+        "nom":"NDONGO",
+        "image":"../public/images/massam.jpg"
+    },
+    {
+        "role":"joueur",
+        "login":"mass",
+        "mdp":"1234",
+        "prenom":"Lamp",
+        "nom":"KA",
+        "image":"../public/images/mass.jpg",
+        "score":100
+    }
+]

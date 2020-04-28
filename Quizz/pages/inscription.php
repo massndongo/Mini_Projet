@@ -27,7 +27,7 @@
                                 "role" => "admin"
     
                             );
-                            array($data,$extrait);
+                            array_push($data,$extrait);
                             $final_data=json_encode($data);
                                 if (file_put_contents(dirname(__DIR__).'/data/users.json', $final_data)) {
                                     header('location: admin.php');
