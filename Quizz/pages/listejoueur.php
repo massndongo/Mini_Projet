@@ -54,7 +54,7 @@
             </table>
             <div class="link-form">
                 <?php
-                    if (isset($_POST['suivant']) || $_SESSION['fin']>=5) {  ?>
+                    if (isset($_POST['suivant']) || $_SESSION['fin']>=6) {  ?>
                         <button class='suivant' name='precedent'>Precedent</button>
                    <?php }
                     if ($_SESSION['fin']<count($infosJ)) { ?>

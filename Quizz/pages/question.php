@@ -32,7 +32,6 @@ if (isset($_POST['btn'])) {
         }
     }elseif ($type_rep=="choixS") {
         if (isset($_POST['radio'])) {
-            var_dump($_POST['radio']);
             foreach ($_POST['radio'] as $value) {
                 if(!empty($_POST['text'][$value])){
                     array_push($repCorrect,$_POST['text'][$value]);
@@ -112,7 +111,7 @@ if (isset($_POST['btn'])) {
 
                 </div>
                 <div class="formControl">
-                    <input type="submit" name="btn" id="btn_submit" onclick="ctr()" value="Enrégistrer">
+                    <input type="submit" name="btn" id="btn_submit" value="Enrégistrer">
                 </div>
         </form>
     </div>
@@ -128,14 +127,14 @@ if (isset($_POST['btn'])) {
                         newInput.setAttribute('id','formControl_'+nbRow);
                         if (document.getElementById('type').value=="choixM") {
                             newInput.innerHTML = `<label for="" class="lab">Réponse `+rep+`</label>
-                                <input type="text" class="input" name="text[]" error="error-" id="text">
+                                <input type="text" class="input" name="text[]" onclick="ctr()"  id="text">
                                 <input type="checkbox" name="box[]" id="id_${nbRow-1}" value="${nbRow-1}">
                                 <button type="button" onclick="onDeleteInput(${nbRow})"><img src="../public/icones/ic-supprimer.png" alt="" srcset="" id="imgAjout"></button>`;
                                 divInputs.appendChild(newInput);
                         }
                         if (document.getElementById('type').value=="choixS") {
                             newInput.innerHTML = `<label for="" class="lab">Réponse `+rep+`</label>
-                                <input type="text" class="input" name="text[]" error="error-4" id="text">
+                                <input type="text" class="input" name="text[]" onclick="ctr()" id="text">
                                 <input type="radio" name="radio[]" id="id_${nbRow-1}" value="${nbRow-1}">
                                 <button type="button" onclick="onDeleteInput(${nbRow})"><img src="../public/icones/ic-supprimer.png" alt="" srcset="" id="imgAjout"></button>`;
                                 divInputs.appendChild(newInput);
@@ -154,7 +153,6 @@ if (isset($_POST['btn'])) {
                             target.remove();
                         }, 500);
                         fadeOut('formControl_'+n);
-                        rep -= 1;
                     }
                     function fadeOut(idTarget) {
                         var target = document.getElementById('idTarget');
