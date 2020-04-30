@@ -48,7 +48,7 @@ if (isset($_POST['connexion'])) {
             </div>
             <h2 id="titre">Le plaisir de jouer</h2>
         </div>
-        <div class="arriere-plan">
+        <div class="arriere-plan" style="background-image:url(../public/images/img-bg.jpg);background-repeat: repeat;">
             <div class="conteneur">
                 <div class="entete-form">
                     <span id="login-form">Login Form</span>

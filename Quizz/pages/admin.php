@@ -9,6 +9,15 @@ if (!isset($_SESSION['role'])) {
 ?>
 
 <script type="text/javascript"><!--
+$(#monImage).attr(src, '../public/icones/ic-liste-active.png');
+$('#monImage').on({
+    'click':function () {
+        var src=($(this).attr('src') === '../public/icones/ic-liste.png') ?
+        '../public/icones/ic-liste-active.png')
+        : '../public/icones/ic-liste.png';
+        $(this.attr('src, src'));
+    };
+})
 $(document).ready(function () {  
 
   $("a.load")
@@ -59,10 +68,10 @@ $(document).ready(function () {
                     </div>
                     <div class="list-prop">
                         <ul>
-                            <div class="li"><a href="admin.php?lien=lq"><li><span class="text">Liste Questions</span><span class="icn"><img src="../public/icones/ic-liste.png" alt="" srcset=""></span></li></a></div>
-                            <div class="li"><a href="admin.php?lien=ca" ><li><span class="text">Créer Admin</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""></span></li></a></div>
-                            <div class="li"><a href="admin.php?lien=lj"><li><span class="text">Liste Joueurs</span><span class="icn"><img src="../public/icones/ic-liste.png" alt="" srcset=""></span></li></a></div>
-                            <div class="li"><a href="admin.php?lien=cq"><li><span class="text">Créer Questions</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""></span></li></a></div>
+                            <div class="li"><a href="admin.php?lien=lq"><li><span class="text">Liste Questions</span><span class="icn"><img src="../public/icones/ic-liste.png" id="monImage" alt="" srcset=""></span></li></a></div>
+                            <div class="li"><a href="admin.php?lien=ca" ><li><span class="text">Créer Admin</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""  ></span></li></a></div>
+                            <div class="li"><a href="admin.php?lien=lj"><li><span class="text">Liste Joueurs</span><span class="icn"><img src="../public/icones/ic-liste.png" alt="" srcset=""  ></span></li></a></div>
+                            <div class="li"><a href="admin.php?lien=cq"><li><span class="text">Créer Questions</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""  ></span></li></a></div>
                         </ul>
                     </div>
                 </div>
@@ -78,6 +87,8 @@ $(document).ready(function () {
                             }elseif ($_GET['lien']=='cq') {
                                 require_once "question.php";
                             }
+                        }else {
+                            require_once "listejoueur.php";
                         }
                     ?>
                 </div>

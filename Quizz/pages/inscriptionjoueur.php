@@ -60,12 +60,12 @@
     </script>
 </head>
 <body>
-        <div class="background-green">
-            <div class="quizz">
-                <a href="#"><img src="../public/images/logo-QuizzSA.png" alt="Erreur"></a>
-            </div>
-            <h2 id="titre">Le plaisir de jouer</h2>
+    <div class="background-green" style="height: 85px;">
+        <div class="quizz" style="width: 6%;">
+            <a href="#"><img src="../public/images/logo-QuizzSA.png" alt="Erreur"></a>
         </div>
+        <h2 id="titre">Le plaisir de jouer</h2>
+    </div>
     <h3>S'INSCRIRE</h3>
     <p>Pour testervotre nveau de culture générale</p>
     <hr>
@@ -99,13 +99,13 @@
         <div class="form-controle" id="div-avatar">
             <label for="" class="avatar-text">Avatar</label>
             <label class="btn-file">Choisir un fichier</label>
-            <input type="file" accept="image/jpeg, image/png" onchange="load_image(this)" name="file" id="fichier">
+            <input type="file" style="opacity:0" accept="image/jpeg, image/png" onchange="load_image(this)" name="file" id="fichier">
         </div>
         <div class="form-controle">
             <input type="submit" value="Créer compte" class="btn-submit" name="btn" id="">
         </div>
-        <div class="avatar-img"><img src="" id="img" alt=""></div>
-        <label for="" id="avatar-texte">Avatar du Joueur</label>
+        <div class="avatar-img" style="position: absolute;left: 60%;bottom: 15%;"><img src="" style="width:100%;height:100%; border-radius:60%" id="img" alt=""></div>
+        <label for="" id="avatar-texte" style="position: absolute;left: 65%; bottom: 10%;">Avatar du Joueur</label>
     </form>
     
 <script>

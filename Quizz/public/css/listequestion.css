@@ -58,3 +58,13 @@ input[type=checkbox]::before{
     color: #3addd6;
     position: absolute;
 }
+button{
+    position: relative;
+    color: white;
+    top: 250px;
+    float: right;
+    width: 30%;
+    background-color: #3addd6;
+    border-radius: 5px;
+    font-size: 18px;
+}

@@ -97,7 +97,7 @@
         <div class="form-controle">
             <input type="submit" value="Créer compte" class="btn-submit" name="btn" id="">
         </div>
-        <div class="avatar-img"><img src="" id="img" alt=""></div>
+        <div class="avatar-img"><img src="" id="img" style="width:100%;height:100%;border-radius: 75%;" alt=""></div>
         <label for="" id="avatar-texte">Avatar du Joueur</label>
     </form>
     

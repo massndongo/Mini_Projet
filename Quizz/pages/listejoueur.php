@@ -32,13 +32,13 @@
                         array_multisort($columns, SORT_DESC, $infosJ);
                         if (isset($_POST['suivant'])) {
                             $debut=$_SESSION['fin'];
-                            $fin=$_SESSION['fin']+3;
+                            $fin=$_SESSION['fin']+15;
                         }elseif (isset($_POST['precedent'])) {
-                            $debut=$_SESSION['fin']-6;
-                            $fin=$_SESSION['fin']-3;
+                            $debut=$_SESSION['fin']-30;
+                            $fin=$_SESSION['fin']-15;
                         }else {
                             $debut=0;
-                            $fin=3;
+                            $fin=15;
                         }
                         for ($i=$debut; $i < $fin ; $i++) { 
                             if ($i<count($infosJ)) {
@@ -54,7 +54,7 @@
             </table>
             <div class="link-form">
                 <?php
-                    if (isset($_POST['suivant']) || $_SESSION['fin']>=6) {  ?>
+                    if (isset($_POST['suivant']) || $_SESSION['fin']>30) {  ?>
                         <button class='suivant' name='precedent'>Precedent</button>
                    <?php }
                     if ($_SESSION['fin']<count($infosJ)) { ?>

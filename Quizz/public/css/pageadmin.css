@@ -155,6 +155,9 @@ a>li{ color: #818181;
     border-left: 5px solid green;
     background-color: #f8f3f0;
 } 
+.li>a>li:hover>span> img{
+    visibility: hidden;
+}
 .li>a{
     text-decoration: none;
 }

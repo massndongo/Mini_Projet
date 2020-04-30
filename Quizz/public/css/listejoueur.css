@@ -17,6 +17,7 @@
 }
 button{
     position: relative;
+    color: white;
     top: 250px;
     float: right;
     width: 30%;

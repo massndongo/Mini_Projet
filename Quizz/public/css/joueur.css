@@ -133,19 +133,21 @@
 .best-score{
     float: left;
     width: 40%;
-    height: 10%;
+    height: 20%;
     box-shadow: none;
     margin-right: 10%;
     margin-top: 10px;
     font-size: 13px;
+    border: 1px solid black;
     color: #6e9393;
     text-decoration: none;
     text-align: center;
 }
 .affichage{
-    width: 100%;
+    width: 90%;
+    margin: auto;
     height: auto;
-    color: black;
-    font-size: 15px;
+    color: #818181;
+    font-size: 25px;
     font-weight: bolder;
 }

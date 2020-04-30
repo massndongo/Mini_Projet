@@ -87,16 +87,16 @@ if (isset($_POST['btn'])) {
     <div class="champQ">
         <form action="" method="post"  id="myform">
                 <div class="formControl">
-                    <label for="" class="lab">Question</label>
-                    <textarea type="text" class="input" rows="10" cols="30" error="error-1" name="question" id=""></textarea>
+                    <label for="" class="lab" style="position:relative;bottom:30px">Question</label>
+                    <textarea type="text" class="input" rows="10" cols="30" style="width:70%;height:70px;" error="error-1" name="question" id="textarea"></textarea>
                     <div class="error-form" id="error-1"></div>
                 </div>
-                <div class="formControl">
+                <div class="formControl" style="position:relative; top:15px;">
                     <label for="" class="lab">Nbre de Points</label>
-                    <input type="number" class="input" error="error-2" name="nbr_point" id="nbr">
+                    <input type="number" class="input"  error="error-2" name="nbr_point" id="nbr">
                     <div class="error-form" id="error-2"></div>
                 </div>
-                <div class="formControl">
+                <div class="formControl" style="position:relative; bottom:25px;" >
                     <label for="" class="lab">Type de réponse</label>
                     <select name="type_rep" class="input" id="type" error="error-3">
                         <option value="">Donner le type de réponse</option>
@@ -104,14 +104,14 @@ if (isset($_POST['btn'])) {
                         <option value="choixS">Choix Simple</option>
                         <option value="choixT">Choix Texte</option>
                     </select>
-                    <button type="button" onclick="onAddInput()" name="" id="" ><img src="../public/icones/ic-ajout-réponse.png" alt="" srcset="" id="imgAjout"></button>
+                    <button style="width:40px;border-color:white;background-color:white" type="button" onclick="onAddInput()"  name="" id=""><img src="../public/icones/ic-ajout-réponse.png" alt="" srcset="" id="imgAjout" style="width:25px;height: 25px;"></button>
                     <div class="error-form" id="error-3"></div>
                 </div>
-                <div id="inputs">
+                <div id="inputs" style="height:200px;position:relative;bottom:20px;">
 
                 </div>
                 <div class="formControl">
-                    <input type="submit" name="btn" id="btn_submit" value="Enrégistrer">
+                    <input type="submit" name="btn" onclick="ctr()" id="btn_submit" value="Enrégistrer" style="position:relative;font-size:20px; top:30px;left:400px;" >
                 </div>
         </form>
     </div>
@@ -127,15 +127,15 @@ if (isset($_POST['btn'])) {
                         newInput.setAttribute('id','formControl_'+nbRow);
                         if (document.getElementById('type').value=="choixM") {
                             newInput.innerHTML = `<label for="" class="lab">Réponse `+rep+`</label>
-                                <input type="text" class="input" name="text[]" onclick="ctr()"  id="text">
-                                <input type="checkbox" name="box[]" id="id_${nbRow-1}" value="${nbRow-1}">
+                                <input type="text" class="input" name="text[]" id="text">
+                                <input type="checkbox" name="box[]" id="id_${nbRow-1}" onclick="ctr()"  value="${nbRow-1}">
                                 <button type="button" onclick="onDeleteInput(${nbRow})"><img src="../public/icones/ic-supprimer.png" alt="" srcset="" id="imgAjout"></button>`;
                                 divInputs.appendChild(newInput);
                         }
                         if (document.getElementById('type').value=="choixS") {
                             newInput.innerHTML = `<label for="" class="lab">Réponse `+rep+`</label>
-                                <input type="text" class="input" name="text[]" onclick="ctr()" id="text">
-                                <input type="radio" name="radio[]" id="id_${nbRow-1}" value="${nbRow-1}">
+                                <input type="text" class="input" name="text[]" id="text">
+                                <input type="radio" name="radio[]" id="id_${nbRow-1}" onclick="ctr()"  value="${nbRow-1}">
                                 <button type="button" onclick="onDeleteInput(${nbRow})"><img src="../public/icones/ic-supprimer.png" alt="" srcset="" id="imgAjout"></button>`;
                                 divInputs.appendChild(newInput);
                         }
