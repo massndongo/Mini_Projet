@@ -56,7 +56,7 @@ $(document).ready(function () {
                         <a href="deconnexion.php" id="deconnexion">Déconnexion</a>
                     </div>
                 </div>
-                <div class="petite-section">
+                <div class="petite-section" >
                     <div class="info-user">
                         <div class="pp">
                             <img src="<?= $_SESSION['image'] ?>" alt="" srcset="">
@@ -72,6 +72,7 @@ $(document).ready(function () {
                             <div class="li"><a href="admin.php?lien=ca" ><li><span class="text">Créer Admin</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""  ></span></li></a></div>
                             <div class="li"><a href="admin.php?lien=lj"><li><span class="text">Liste Joueurs</span><span class="icn"><img src="../public/icones/ic-liste.png" alt="" srcset=""  ></span></li></a></div>
                             <div class="li"><a href="admin.php?lien=cq"><li><span class="text">Créer Questions</span><span class="icn"><img src="../public/icones/ic-ajout.png" alt="" srcset=""  ></span></li></a></div>
+                            <div class="li"><a href="admin.php?lien=bord"><li><span class="text">Tableau de bord</span><span class="icn"><img src="../public/icones/ic-liste.png" alt="" srcset=""  ></span></li></a></div>
                         </ul>
                     </div>
                 </div>
@@ -86,6 +87,8 @@ $(document).ready(function () {
                                 require_once "listejoueur.php";
                             }elseif ($_GET['lien']=='cq') {
                                 require_once "question.php";
+                            }elseif ($_GET['lien']=='bord') {
+                                require_once "dashboard.php";
                             }
                         }else {
                             require_once "listejoueur.php";

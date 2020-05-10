@@ -1,6 +1,8 @@
 <?php
-$repCorrect=[];
-$repFausse=[];
+$reponse = array(
+    "correct"=>array(),
+    "fausse"=>array(),
+);
 $data=file_get_contents(dirname(__DIR__).'/data/questions.json');
 $data=json_decode($data,true);
 if (isset($_POST['btn'])) {
@@ -11,17 +13,16 @@ if (isset($_POST['btn'])) {
         if (isset($_POST['box'])) {
             foreach ($_POST['box'] as $value) {
                 if(!empty($_POST['text'][$value])){
-                    array_push($repCorrect,$_POST['text'][$value]);
+                    $reponse["correct"][]=$_POST['text'][$value];
                 }
             }
-            $repFausse=array_diff($_POST['text'],$repCorrect);
+            $reponse["fausse"] = array_diff($_POST['text'],$reponse["correct"]);
             if (file_exists(dirname(__DIR__).'/data/questions.json')) {
                 $extrait=array(
                 "question" => $question,
                 "point" => $nbr_point,
                 "choixReponse" => $type_rep,
-                "repFausse" => $repFausse,
-                "repCorrect" => $repCorrect
+                "reponse"=>$reponse
                 );
                 array_push($data,$extrait);
                 $final_data=json_encode($data);
@@ -34,17 +35,16 @@ if (isset($_POST['btn'])) {
         if (isset($_POST['radio'])) {
             foreach ($_POST['radio'] as $value) {
                 if(!empty($_POST['text'][$value])){
-                    array_push($repCorrect,$_POST['text'][$value]);
+                    $reponse["correct"][]=$_POST['text'][$value];
                 }
             }
-            $repFausse=array_diff($_POST['text'],$repCorrect);
+            $reponse["fausse"] = array_diff($_POST['text'],$reponse["correct"]);
             if (file_exists(dirname(__DIR__).'/data/questions.json')) {
                 $extrait=array(
                 "question" => $question,
                 "point" => $nbr_point,
                 "choixReponse" => $type_rep,
-                "repFausse" => $repFausse,
-                "repCorrect" => $repCorrect
+                "reponse" => $reponse
                 );
                 array_push($data,$extrait);
                 $final_data=json_encode($data);
@@ -56,13 +56,13 @@ if (isset($_POST['btn'])) {
     }
     elseif ($type_rep=="choixT") {
         if (isset($_POST['text'])) {
-            $repCorrect=$_POST['text'];
+            $reponse=$_POST['text'];
             if (file_exists(dirname(__DIR__).'/data/questions.json')) {
                 $extrait=array(
                 "question" => $question,
                 "point" => $nbr_point,
                 "choixReponse" => $type_rep,
-                "repCorrect" => $repCorrect
+                "reponse" => $reponse
                 );
                 array_push($data,$extrait);
                 $final_data=json_encode($data);
